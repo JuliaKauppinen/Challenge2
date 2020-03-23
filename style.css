@@ -1,0 +1,336 @@
+html {
+	box-sizing: border-box;
+	height: 100vh;
+}
+
+*, 
+*:before,
+*:after{
+	box-sizing: inherit;
+}
+
+/*-------standaard opmaak--------*/
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-size: 100%;
+	background-repeat: repeat;
+}	
+
+img {
+	position: absolute;
+}
+
+/*----------- opstelling grids -------------*/
+.grid-container {
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr;
+
+	grid-template-areas:
+	"afbeelding"
+	"tekst"
+	"klok"
+	"datum";
+}
+
+.box1 {
+	grid-area: afbeelding;
+	width: 100%;
+	min-height: 200px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	resize: both;
+}
+
+.box2 {
+	grid-area: tekst;
+	width: 100%;
+	min-height: 200px;
+	display: flex;
+	flex-flow: column;
+	align-content: center;
+}
+
+.box3 {
+	grid-area: klok;
+	width: 100%;
+	min-height: 50px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	resize: both;
+}
+
+.box4 {
+	grid-area: datum;
+	width: 100%;
+	margin-top: -10px;
+	min-height: 20px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	resize: both;
+}
+
+/*------- opmaak afbeeldingen--------*/
+.images {
+	width: 75%;
+}
+
+/*------- opmaak animatie--------*/
+#stars, #birds, #clouds {
+	position: absolute;
+	left: 0%;
+	right:0%;
+	margin-left: 7%;
+	animation: 2000ms LinksRechts infinite alternate ease-in-out;
+}
+
+@keyframes LinksRechts {
+  0% {
+  	left: 50px;
+  }
+  100% {
+  	right: 50px;
+  }
+}
+
+/*------- animatie groter en kleiner--------*/
+#sun {
+	max-width: 350px;
+	position: absolute;
+	animation: 1000ms GroterKleiner infinite alternate ease-in-out;
+}
+
+@keyframes GroterKleiner {
+  0% {
+		transform: scale(0.9);
+  }
+
+  100% {
+		transform: scale(1.1);
+  }
+}
+
+/*------- opmaak teksten--------*/
+.box2 #textGood {
+	margin: 0;
+	padding: 0;
+	font-size: 8vw;
+	font-weight: bold;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+	letter-spacing: 5px;
+}
+
+.box2 #textOnderschrift {
+	margin: 0;
+	padding: 0;
+	margin-left: 5%;
+	margin-right: 5%;
+	font-size: 5vw;
+	font-weight: bold;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+	letter-spacing: 3px;
+}
+
+/*------- opmaak klok--------*/
+
+.box3 #clock {
+	font-size: 11vw;
+	font-family: 'Roboto', sans-serif;
+}
+
+.box4 #tekstVoorDatum, .box4 #date {
+	margin: 0;
+	padding: 0;
+	font-size: 3vw;
+	font-weight: bold;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+	letter-spacing: 3px;
+}
+
+/*------------------------------ Grote telefoon ------------------------------------*/
+@media only screen and (min-width: 620px) {
+
+/*------- opmaak sections--------*/
+.box3 {
+	margin-top: 8%;
+}
+
+/*------- opmaak tekst--------*/
+.box2 #textGood {
+	font-size: 7vw;
+}
+
+.box2 #textOnderschrift {
+	margin-left: 8%;
+	margin-right: 8%;
+	font-size: 4vw;
+}
+
+}
+
+/*------------------------------ iPad ------------------------------------*/
+@media only screen and (min-width: 768px) {
+
+.box2 {
+	margin-top: 2%;
+}
+
+.box3 {
+	margin-top: 2%;
+}
+
+/*------- opmaak afbeeldingen--------*/
+.images {
+	width: 85%;
+	margin-top: 2%;
+}
+
+/*------- opmaak animatie--------*/
+#stars, #birds, #clouds {
+	margin-top: 3%;
+	margin-left: 8%;
+	width: 80%;
+}
+
+/*------- opmaak teksten--------*/
+.box2 #textGood {
+	font-size: 6.5vw;
+}
+
+.box2 #textOnderschrift {
+	margin-bottom: 5%;
+	margin-left: 8%;
+	margin-right: 8%;
+	font-size: 3.5vw;
+}
+
+.box4 #tekstVoorDatum, .box4 #date {
+	font-size: 2.5vw;
+}
+
+/*------------------------------ Kleine laptop ------------------------------------*/
+@media only screen and (min-width: 1024px) {		
+
+/*----------- opstelling grids -------------*/
+.grid-container {
+	grid-template-columns: 1fr 1fr;
+
+	grid-template-areas:
+	"afbeelding 	tekst"
+	"klok			klok"
+	"datum 			datum";
+}
+
+.box2 {
+	margin-top: 20%;
+}
+
+.box3 {
+	margin-top: 5%;
+}
+
+/*------- opmaak afbeeldingen--------*/
+.images {
+	width: 100%;
+	margin-left: 5%;
+}
+
+#sun {
+	max-width: 450px;
+	margin-top: 8%;
+}
+
+/*------- opmaak animatie--------*/
+#stars, #birds, #clouds {
+	width: 90%;
+}
+
+/*------- opmaak (lettertype)groottes--------*/
+.box2 #textGood {
+	font-size: 5.5vw;
+}
+
+.box2 #textOnderschrift {
+	font-size: 2.5vw;
+	margin-left: 2%;
+	margin-right: 7%;
+}
+
+/*-------- opmaak klok en datum --------*/
+.box3 #clock {
+	font-size: 9vw;
+}
+
+.box4 #tekstVoorDatum, .box4 #date {
+	font-size: 2vw;
+}
+
+}
+/*------------------------------ Grote laptop ------------------------------------*/
+@media only screen and (min-width: 1280px) {
+
+/*----------- opstelling grids -------------*/
+.grid-container {
+	grid-template-columns: 1fr 1fr;
+
+	grid-template-areas:
+	"afbeelding 	klok"
+	"afbeelding		datum"
+	"tekst 			tekst";
+}
+
+.box1 {
+	margin-top: 5%;
+}
+
+.box2 {
+	margin-top: 5%;
+}
+
+.box3 {
+	margin-top: 17%;
+}
+
+/*------- opmaak afbeeldingen--------*/
+.images {
+	width: 85%;
+	margin-left: 0%;
+	margin-top: 0%;
+}
+
+#sun {
+	margin-top: 5%;
+}
+
+/*------- opmaak teksten--------*/
+.box2 #textGood {
+	font-weight: normal;
+}
+
+.box2 #textOnderschrift {
+	margin-right: 2%;
+}
+
+/*-------- opmaak klok en datum --------*/
+.box3 #clock {
+	font-size: 7vw;
+	margin-right: 2%;
+	font-weight: bold;
+}
+
+.box4 #tekstVoorDatum, .box4 #date {
+	font-size: 1.5vw;
+}
+
+}

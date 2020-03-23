@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" initial-scale="1" />
+		<title>Clock in space</title>
+		<link href="https://fonts.googleapis.com/css?family=Oswald:200|Roboto:100&display=swap" rel="stylesheet">
+		<link href="style.css" type="text/css" rel="stylesheet" />
+		<script type="text/javascript" src="main.js" defer></script>
+	</head>
+	<body onload="realtimeClock()">
+		<main>
+			<div class="grid-container">
+				<section class="box1">
+					<img src="img/stars.png" alt="test" class="images" id="stars"/>
+					<img src="img/birds.png" alt="test" class="images" id="birds"/>
+					<img src="img/sun.png" alt="test" class="images" id="sun"/>
+					<img src="img/clouds.png" alt="test" class="images" id="clouds"/>
+				</section>
+				<section class="box2">
+					<p id="textGood"></p>
+					<p id="textOnderschrift"></p>
+				</section>
+				<section class="box3">
+					<div id="clock"></div>
+				</section>
+				<section class="box4">
+					<p><span id="tekstVoorDatum">Today's date is </span><span id="date"></span></p>
+				</section>
+			</div>
+		</main>
+	</body>
+</html>
